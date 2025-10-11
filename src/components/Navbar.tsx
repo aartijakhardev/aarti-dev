@@ -15,6 +15,20 @@ export default function Navbar() {
     { href: '/contact', label: 'Contact' },
   ];
 
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    // Check if it's a hash link (anchor link)
+    if (href.startsWith('#')) {
+      e.preventDefault();
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+        });
+      }
+    }
+  };
+
   return (
     <nav className="fixed w-full bg-white/90 backdrop-blur-md shadow-sm z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -39,12 +53,22 @@ export default function Navbar() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
               >
-                <Link
-                  href={link.href}
-                  className="text-gray-700 hover:text-primary-600 transition-colors duration-300 font-medium"
-                >
-                  {link.label}
-                </Link>
+                {link.href.startsWith('#') ? (
+                  <a
+                    href={link.href}
+                    onClick={(e) => handleClick(e, link.href)}
+                    className="text-gray-700 hover:text-primary-600 transition-colors duration-300 font-medium cursor-pointer"
+                  >
+                    {link.label}
+                  </a>
+                ) : (
+                  <Link
+                    href={link.href}
+                    className="text-gray-700 hover:text-primary-600 transition-colors duration-300 font-medium"
+                  >
+                    {link.label}
+                  </Link>
+                )}
               </motion.div>
             ))}
             <motion.div
@@ -84,14 +108,28 @@ export default function Navbar() {
           >
             <div className="px-4 py-4 space-y-3">
               {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setIsOpen(false)}
-                  className="block text-gray-700 hover:text-primary-600 transition-colors duration-300 py-2"
-                >
-                  {link.label}
-                </Link>
+                link.href.startsWith('#') ? (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    onClick={(e) => {
+                      handleClick(e, link.href);
+                      setIsOpen(false);
+                    }}
+                    className="block text-gray-700 hover:text-primary-600 transition-colors duration-300 py-2 cursor-pointer"
+                  >
+                    {link.label}
+                  </a>
+                ) : (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    onClick={() => setIsOpen(false)}
+                    className="block text-gray-700 hover:text-primary-600 transition-colors duration-300 py-2"
+                  >
+                    {link.label}
+                  </Link>
+                )
               ))}
               <Link
                 href="/contact"

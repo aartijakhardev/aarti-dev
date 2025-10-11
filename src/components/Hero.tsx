@@ -5,6 +5,16 @@ import Link from 'next/link';
 import { FaCode, FaRocket, FaLaptopCode } from 'react-icons/fa';
 
 export default function Hero() {
+  const handlePricingClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    const element = document.querySelector('#pricing');
+    if (element) {
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }
+  };
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -77,7 +87,7 @@ export default function Hero() {
           {/* Badge */}
           <motion.div variants={itemVariants} className="inline-flex items-center space-x-2 bg-primary-100 text-primary-700 px-4 py-2 rounded-full mb-8">
             <FaRocket />
-            <span className="text-sm font-semibold">Available for Freelance Projects</span>
+            <span className="text-sm font-semibold">Your Trusted Technology Partner</span>
           </motion.div>
 
           {/* Main heading */}
@@ -95,8 +105,8 @@ export default function Hero() {
             variants={itemVariants}
             className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto"
           >
-            Full Stack Developer specializing in CRM systems, healthcare applications,
-            and affordable websites for schools and businesses across India.
+            We specialize in enterprise CRM systems, healthcare applications,
+            and scalable web solutions for educational institutions and businesses across India.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -110,12 +120,13 @@ export default function Hero() {
             >
               Start Your Project
             </Link>
-            <Link
+            <a
               href="#pricing"
-              className="bg-white text-primary-600 px-8 py-4 rounded-full text-lg font-semibold hover:bg-gray-50 transition-all duration-300 shadow-lg hover:shadow-xl border-2 border-primary-600"
+              onClick={handlePricingClick}
+              className="bg-white text-primary-600 px-8 py-4 rounded-full text-lg font-semibold hover:bg-gray-50 transition-all duration-300 shadow-lg hover:shadow-xl border-2 border-primary-600 cursor-pointer"
             >
               View Pricing
-            </Link>
+            </a>
           </motion.div>
 
           {/* Feature highlights */}

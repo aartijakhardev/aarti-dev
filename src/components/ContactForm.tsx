@@ -46,8 +46,8 @@ export default function ContactForm() {
   return (
     <div className="min-h-screen pt-24 pb-16 px-4">
       <div className="max-w-6xl mx-auto">
-        <div className="grid md:grid-cols-2 gap-12 items-start">
-          {/* Left side - Text content */}
+        <div className="flex flex-col-reverse md:grid md:grid-cols-2 gap-12 items-start">
+          {/* Left side - Text content (shown second on mobile) */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
@@ -59,7 +59,7 @@ export default function ContactForm() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
-                className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight"
+                className="text-3xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 md:mb-6 leading-tight"
               >
                 Don&apos;t settle for technology that holds you back
               </motion.h1>
@@ -68,7 +68,7 @@ export default function ContactForm() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 }}
-                className="text-xl text-gray-700 leading-relaxed"
+                className="text-lg md:text-xl text-gray-700 leading-relaxed"
               >
                 Your business&apos;s future is too important to trust to just any development shop. 
                 Hand over your challenges to the team that&apos;s helped organizations like yours turn 
@@ -82,7 +82,7 @@ export default function ContactForm() {
               transition={{ delay: 0.4 }}
               className="bg-white rounded-2xl shadow-lg p-8 space-y-6"
             >
-              <h3 className="text-2xl font-bold text-gray-900">Why Choose Me?</h3>
+              <h3 className="text-2xl font-bold text-gray-900">Why Choose Us?</h3>
               <ul className="space-y-4">
                 <li className="flex items-start space-x-3">
                   <div className="w-6 h-6 bg-primary-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
@@ -90,7 +90,7 @@ export default function ContactForm() {
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-900">Proven Track Record</h4>
-                    <p className="text-gray-600">Experience with CRMs and healthcare systems</p>
+                    <p className="text-gray-600">Enterprise experience with CRMs and healthcare systems</p>
                   </div>
                 </li>
                 <li className="flex items-start space-x-3">
@@ -98,8 +98,8 @@ export default function ContactForm() {
                     <span className="text-primary-600 text-sm">✓</span>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900">Affordable Pricing</h4>
-                    <p className="text-gray-600">Starting freelance career with competitive rates</p>
+                    <h4 className="font-semibold text-gray-900">Competitive Pricing</h4>
+                    <p className="text-gray-600">Enterprise quality at affordable rates</p>
                   </div>
                 </li>
                 <li className="flex items-start space-x-3">
@@ -108,31 +108,31 @@ export default function ContactForm() {
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-900">End-to-End Support</h4>
-                    <p className="text-gray-600">From development to deployment and beyond</p>
+                    <p className="text-gray-600">Comprehensive support from development to maintenance</p>
                   </div>
                 </li>
               </ul>
             </motion.div>
           </motion.div>
 
-          {/* Right side - Contact form */}
+          {/* Right side - Contact form (shown first on mobile) */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
-            className="bg-white rounded-3xl shadow-2xl p-8 md:p-10"
+            className="bg-white rounded-3xl shadow-2xl p-6 md:p-10 w-full"
           >
-            <h2 className="text-3xl font-bold text-gray-900 mb-8">Request a Consultation</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 md:mb-8">Request a Consultation</h2>
             
-            <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+            <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 md:space-y-6">
               <div>
                 <input
                   type="text"
                   placeholder="FULL NAME"
                   {...register('fullName', { required: 'Name is required' })}
-                  className={`w-full px-6 py-4 bg-gray-100 border-2 ${
+                  className={`w-full px-4 md:px-6 py-3 md:py-4 bg-gray-100 border-2 ${
                     errors.fullName ? 'border-red-500' : 'border-transparent'
-                  } rounded-xl focus:outline-none focus:border-primary-500 transition-colors placeholder-gray-400`}
+                  } rounded-xl focus:outline-none focus:border-primary-500 transition-colors placeholder-gray-400 text-sm md:text-base`}
                 />
                 {errors.fullName && (
                   <p className="mt-1 text-sm text-red-500">{errors.fullName.message}</p>
@@ -150,9 +150,9 @@ export default function ContactForm() {
                       message: 'Invalid email address',
                     },
                   })}
-                  className={`w-full px-6 py-4 bg-gray-100 border-2 ${
+                  className={`w-full px-4 md:px-6 py-3 md:py-4 bg-gray-100 border-2 ${
                     errors.email ? 'border-red-500' : 'border-transparent'
-                  } rounded-xl focus:outline-none focus:border-primary-500 transition-colors placeholder-gray-400`}
+                  } rounded-xl focus:outline-none focus:border-primary-500 transition-colors placeholder-gray-400 text-sm md:text-base`}
                 />
                 {errors.email && (
                   <p className="mt-1 text-sm text-red-500">{errors.email.message}</p>
@@ -162,11 +162,11 @@ export default function ContactForm() {
               <div>
                 <textarea
                   placeholder="MESSAGE"
-                  rows={6}
+                  rows={5}
                   {...register('message', { required: 'Message is required' })}
-                  className={`w-full px-6 py-4 bg-gray-100 border-2 ${
+                  className={`w-full px-4 md:px-6 py-3 md:py-4 bg-gray-100 border-2 ${
                     errors.message ? 'border-red-500' : 'border-transparent'
-                  } rounded-xl focus:outline-none focus:border-primary-500 transition-colors placeholder-gray-400 resize-none`}
+                  } rounded-xl focus:outline-none focus:border-primary-500 transition-colors placeholder-gray-400 resize-none text-sm md:text-base md:rows-6`}
                 />
                 {errors.message && (
                   <p className="mt-1 text-sm text-red-500">{errors.message.message}</p>
@@ -178,7 +178,7 @@ export default function ContactForm() {
                 disabled={isSubmitting}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className={`w-full bg-primary-400 hover:bg-primary-500 text-white font-bold py-4 px-8 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl uppercase tracking-wide ${
+                className={`w-full bg-primary-400 hover:bg-primary-500 text-white font-bold py-3 md:py-4 px-6 md:px-8 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl uppercase tracking-wide text-sm md:text-base ${
                   isSubmitting ? 'opacity-50 cursor-not-allowed' : ''
                 }`}
               >
@@ -191,7 +191,7 @@ export default function ContactForm() {
                   animate={{ opacity: 1, y: 0 }}
                   className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-xl"
                 >
-                  Thank you! I&apos;ll get back to you soon.
+                  Thank you! Our team will get back to you within 24 hours.
                 </motion.div>
               )}
 
@@ -206,10 +206,10 @@ export default function ContactForm() {
               )}
             </form>
 
-            <div className="mt-8 pt-8 border-t border-gray-200">
-              <p className="text-gray-600 text-center">
+            <div className="mt-6 md:mt-8 pt-6 md:pt-8 border-t border-gray-200">
+              <p className="text-gray-600 text-center text-sm md:text-base">
                 Or reach out directly at{' '}
-                <a href="mailto:aarti.jakhar.dev@gmail.com" className="text-primary-600 font-semibold hover:underline">
+                <a href="mailto:aarti.jakhar.dev@gmail.com" className="text-primary-600 font-semibold hover:underline break-all">
                   aarti.jakhar.dev@gmail.com
                 </a>
               </p>

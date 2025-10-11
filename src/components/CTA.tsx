@@ -19,12 +19,12 @@ export default function CTA() {
           className="text-center text-white"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Don&apos;t Settle for Technology That Holds You Back
+            Ready to Transform Your Digital Presence?
           </h2>
           <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto opacity-90">
-            Your business&apos;s future is too important to trust to just any development shop. 
-            Hand over your challenges to a developer who&apos;s helped organizations turn operational 
-            bottlenecks into sustainable growth.
+            Your business deserves technology that drives growth, not complexity. 
+            Partner with a team that has helped organizations across industries transform 
+            operational challenges into competitive advantages.
           </p>
           <motion.div
             whileHover={{ scale: 1.05 }}
