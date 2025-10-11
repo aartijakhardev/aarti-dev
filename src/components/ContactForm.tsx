@@ -209,8 +209,8 @@ export default function ContactForm() {
             <div className="mt-8 pt-8 border-t border-gray-200">
               <p className="text-gray-600 text-center">
                 Or reach out directly at{' '}
-                <a href="mailto:your.email@example.com" className="text-primary-600 font-semibold hover:underline">
-                  your.email@example.com
+                <a href="mailto:aarti.jakhar.dev@gmail.com" className="text-primary-600 font-semibold hover:underline">
+                  aarti.jakhar.dev@gmail.com
                 </a>
               </p>
             </div>

@@ -35,7 +35,7 @@ export default function Footer() {
                 <FaLinkedin size={24} />
               </a>
               <a
-                href="mailto:your.email@example.com"
+                href="mailto:aarti.jakhar.dev@gmail.com"
                 className="text-gray-400 hover:text-primary-400 transition-colors"
               >
                 <FaEnvelope size={24} />
@@ -76,8 +76,8 @@ export default function Footer() {
             <ul className="space-y-2">
               <li className="flex items-center text-gray-400">
                 <FaEnvelope className="mr-2" />
-                <a href="mailto:your.email@example.com" className="hover:text-primary-400 transition-colors">
-                  your.email@example.com
+                <a href="mailto:aarti.jakhar.dev@gmail.com" className="hover:text-primary-400 transition-colors">
+                  aarti.jakhar.dev@gmail.com
                 </a>
               </li>
               <li className="flex items-center text-gray-400">
