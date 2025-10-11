@@ -79,7 +79,7 @@ export default function Experience() {
             Proven Experience
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            As a software engineer, I've built robust systems for businesses across multiple industries,
+            As a software engineer, I&apos;ve built robust systems for businesses across multiple industries,
             ensuring quality, scalability, and client satisfaction.
           </p>
         </motion.div>
@@ -159,7 +159,7 @@ export default function Experience() {
           <h3 className="text-3xl font-bold mb-4">My Commitment to You</h3>
           <p className="text-lg md:text-xl max-w-3xl mx-auto opacity-90">
             As a software engineer, I guarantee clean, maintainable code, transparent communication,
-            and ongoing support. Your success is my priority, and I'll work with you every step of the way
+            and ongoing support. Your success is my priority, and I&apos;ll work with you every step of the way
             to ensure your website exceeds expectations.
           </p>
         </motion.div>

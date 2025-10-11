@@ -61,7 +61,7 @@ export default function ContactForm() {
                 transition={{ delay: 0.2 }}
                 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight"
               >
-                Don't settle for technology that holds you back
+                Don&apos;t settle for technology that holds you back
               </motion.h1>
               
               <motion.p
@@ -70,8 +70,8 @@ export default function ContactForm() {
                 transition={{ delay: 0.3 }}
                 className="text-xl text-gray-700 leading-relaxed"
               >
-                Your business's future is too important to trust to just any development shop. 
-                Hand over your challenges to the team that's helped organizations like yours turn 
+                Your business&apos;s future is too important to trust to just any development shop. 
+                Hand over your challenges to the team that&apos;s helped organizations like yours turn 
                 operational bottlenecks into sustainable growth.
               </motion.p>
             </div>
@@ -191,7 +191,7 @@ export default function ContactForm() {
                   animate={{ opacity: 1, y: 0 }}
                   className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-xl"
                 >
-                  Thank you! I'll get back to you soon.
+                  Thank you! I&apos;ll get back to you soon.
                 </motion.div>
               )}
 

@@ -19,11 +19,11 @@ export default function CTA() {
           className="text-center text-white"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Don't Settle for Technology That Holds You Back
+            Don&apos;t Settle for Technology That Holds You Back
           </h2>
           <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto opacity-90">
-            Your business's future is too important to trust to just any development shop. 
-            Hand over your challenges to a developer who's helped organizations turn operational 
+            Your business&apos;s future is too important to trust to just any development shop. 
+            Hand over your challenges to a developer who&apos;s helped organizations turn operational 
             bottlenecks into sustainable growth.
           </p>
           <motion.div

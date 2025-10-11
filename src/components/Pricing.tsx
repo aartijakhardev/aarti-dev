@@ -114,7 +114,7 @@ export default function Pricing() {
             Special rates for educational institutions across India. Quality websites that fit your budget.
           </p>
           <div className="mt-6 inline-block bg-primary-100 text-primary-800 px-6 py-3 rounded-full">
-            <p className="text-sm font-semibold">🎓 As I'm starting my freelance career, these are introductory rates - invest early!</p>
+            <p className="text-sm font-semibold">🎓 As I&apos;m starting my freelance career, these are introductory rates - invest early!</p>
           </div>
         </motion.div>
 
@@ -182,7 +182,7 @@ export default function Pricing() {
           className="mt-16 text-center"
         >
           <div className="bg-white rounded-2xl shadow-lg p-8 max-w-4xl mx-auto">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">What's Included in All Plans</h3>
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">What&apos;s Included in All Plans</h3>
             <div className="grid md:grid-cols-3 gap-6 text-left">
               <div>
                 <h4 className="font-semibold text-primary-600 mb-2">✓ Clean Design</h4>
@@ -200,7 +200,7 @@ export default function Pricing() {
             <div className="mt-8 pt-6 border-t border-gray-200">
               <p className="text-gray-600">
                 💡 <strong>Custom requirements?</strong> Need additional features like student portals, 
-                online exams, or library management? Let's discuss a custom package for your needs!
+                online exams, or library management? Let&apos;s discuss a custom package for your needs!
               </p>
             </div>
           </div>
