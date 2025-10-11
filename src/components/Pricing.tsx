@@ -27,7 +27,7 @@ export default function Pricing() {
         "Hosting guidance",
       ],
       popular: false,
-      color: "from-gray-100 to-gray-200",
+      color: "from-gray-500 to-gray-200",
       buttonColor: "bg-gray-700 hover:bg-gray-800",
     },
     {
@@ -49,7 +49,7 @@ export default function Pricing() {
       ],
       popular: true,
       color: "from-primary-500 to-primary-600",
-      buttonColor: "bg-white text-primary-600 hover:bg-gray-100",
+      buttonColor: "bg-[#075985] text-primary-600 hover:bg-gray-100",
     },
     {
       name: "Premium",
