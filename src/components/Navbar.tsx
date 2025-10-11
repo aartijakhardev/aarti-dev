@@ -26,7 +26,7 @@ export default function Navbar() {
               animate={{ opacity: 1, x: 0 }}
               className="text-2xl font-bold text-primary-600"
             >
-              Aarti Jakhar
+              Serviwo
             </motion.div>
           </Link>
 

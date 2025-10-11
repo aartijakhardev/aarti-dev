@@ -13,7 +13,7 @@ export default function Pricing() {
   const pricingTiers = [
     {
       name: "Basic",
-      price: "₹5,000",
+      price: "₹6,999",
       duration: "one-time",
       description: "Perfect for small rural schools starting their digital journey",
       features: [
@@ -32,7 +32,7 @@ export default function Pricing() {
     },
     {
       name: "Standard",
-      price: "₹12,000",
+      price: "₹13,999",
       duration: "one-time",
       description: "Ideal for schools wanting more features and functionality",
       features: [
@@ -53,7 +53,7 @@ export default function Pricing() {
     },
     {
       name: "Premium",
-      price: "₹20,000",
+      price: "21,999",
       duration: "one-time",
       description: "Complete solution for schools wanting a full-featured portal",
       features: [

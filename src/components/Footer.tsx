@@ -12,7 +12,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* About */}
           <div className="col-span-1 md:col-span-2">
-            <h3 className="text-2xl font-bold text-primary-400 mb-4">Aarti Jakhar</h3>
+            <h3 className="text-2xl font-bold text-primary-400 mb-4">Serviwo</h3>
             <p className="text-gray-400 mb-4">
               Full Stack Developer specializing in building modern web applications,
               CRM systems, and custom solutions for businesses and educational institutions.

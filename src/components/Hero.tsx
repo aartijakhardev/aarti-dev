@@ -131,7 +131,7 @@ export default function Hero() {
               <motion.div animate={floatingAnimation}>
                 <FaCode className="text-5xl text-primary-600 mx-auto mb-4" />
               </motion.div>
-              <h3 className="text-xl font-semibold mb-2">Clean Code</h3>
+              <h3 className="text-xl font-semibold mb-2 text-black">Clean Code</h3>
               <p className="text-gray-600">
                 Well-structured, maintainable code following industry best practices
               </p>
@@ -145,7 +145,7 @@ export default function Hero() {
               <motion.div animate={{ ...floatingAnimation, transition: { ...floatingAnimation.transition, delay: 0.5 } }}>
                 <FaLaptopCode className="text-5xl text-primary-600 mx-auto mb-4" />
               </motion.div>
-              <h3 className="text-xl font-semibold mb-2">Responsive Design</h3>
+              <h3 className="text-xl font-semibold mb-2 text-black">Responsive Design</h3>
               <p className="text-gray-600">
                 Beautiful interfaces that work perfectly on all devices
               </p>
@@ -159,7 +159,7 @@ export default function Hero() {
               <motion.div animate={{ ...floatingAnimation, transition: { ...floatingAnimation.transition, delay: 1 } }}>
                 <FaRocket className="text-5xl text-primary-600 mx-auto mb-4" />
               </motion.div>
-              <h3 className="text-xl font-semibold mb-2">Fast Delivery</h3>
+              <h3 className="text-xl font-semibold mb-2 text-black">Fast Delivery</h3>
               <p className="text-gray-600">
                 Quick turnaround times without compromising on quality
               </p>
