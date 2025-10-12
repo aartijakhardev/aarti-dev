@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useRouter, usePathname } from 'next/navigation';
 import { FaGithub, FaLinkedin, FaEnvelope, FaPhone } from 'react-icons/fa';
 
@@ -33,7 +34,15 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* About */}
           <div className="col-span-1 md:col-span-2">
-            <h3 className="text-2xl font-bold text-primary-400 mb-4">Serviwo</h3>
+            <div className="mb-4">
+              <Image
+                src="/amazing.png"
+                alt="Serviwo Logo"
+                width={280}
+                height={80} 
+                className="h-8 w-auto md:h-10"
+              />
+            </div>
             <p className="text-gray-400 mb-4">
               A technology solutions provider specializing in enterprise web applications,
               CRM systems, and custom digital solutions for businesses and educational institutions across India.

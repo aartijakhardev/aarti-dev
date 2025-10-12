@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaBars, FaTimes } from 'react-icons/fa';
 
@@ -30,17 +31,24 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="fixed w-full bg-white/90 backdrop-blur-md shadow-sm z-50">
+    <nav className="fixed w-full bg-white backdrop-blur-md shadow-sm z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-between items-center h-16 bg-white">
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
-              className="text-2xl font-bold text-primary-600"
+              className="relative"
             >
-              Serviwo
+              <Image
+                src="/serviwo.png"
+                alt="Serviwo Logo"
+                width={280}
+                height={80}
+                className="h-8 w-auto md:h-10"
+                priority
+              />
             </motion.div>
           </Link>
 
