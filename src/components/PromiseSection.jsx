@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 
@@ -41,7 +43,7 @@ export default function PromiseSection() {
     {
       icon: "🤝",
       title: "Full Support",
-      description: "We're with you beyond project completion",
+      description: "We&apos;re with you beyond project completion",
       gradient: "from-purple-500/10 to-pink-500/10"
     }
   ];
@@ -122,7 +124,7 @@ export default function PromiseSection() {
                 Your success drives us. We combine technical excellence with transparent communication, 
                 ensuring your vision becomes reality.{' '}
                 <span className="text-white font-semibold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-                  Let's build something amazing together.
+                  Let&apos;s build something amazing together.
                 </span>
               </p>
             </motion.div>
