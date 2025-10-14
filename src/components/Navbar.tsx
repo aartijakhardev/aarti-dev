@@ -5,10 +5,11 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaBars, FaTimes } from 'react-icons/fa';
+import { useRouter } from 'next/navigation';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-
+  const router = useRouter();
   const navLinks = [
     { href: '/', label: 'Home' },
     { href: '#experience', label: 'Experience' },
@@ -20,6 +21,7 @@ export default function Navbar() {
     // Check if it's a hash link (anchor link)
     if (href.startsWith('#')) {
       e.preventDefault();
+      router.push("/"+href);
       const element = document.querySelector(href);
       if (element) {
         element.scrollIntoView({
