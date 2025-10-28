@@ -12,18 +12,20 @@ export default function Pricing() {
 
   const starterPlan = {
     name: "Starter",
-    price: "₹3,999",
+    price: "₹8,999",
     duration: "one-time",
     description: "Perfect for new schools & startups looking to establish their online presence with a professional landing page",
     features: [
-      "Professional single-page website",
-      "Eye-catching hero section",
-      "About your institution section",
-      "Key features & highlights",
-      "Contact information & location map",
-      "Fully mobile-responsive design",
-      "Contact form integration",
+      { name: "Professional single-page website design", price: 3500 },
+      { name: "Eye-catching hero section with custom graphics", price: 1500 },
+      { name: "About institution & key features section", price: 1000 },
+      { name: "Contact form with Google Maps integration", price: 1500 },
+      { name: "Fully mobile-responsive design", price: 800 },
+      { name: "Basic SEO setup", price: 700 },
+    ],
+    includedFree: [
       "2 weeks of dedicated support",
+      "SSL certificate setup",
       "Easy upgrade path to full website",
     ],
     color: "from-green-500 to-green-600",
@@ -33,18 +35,22 @@ export default function Pricing() {
   const pricingTiers = [
     {
       name: "Basic",
-      price: "₹6,999",
+      price: "₹18,999",
       duration: "one-time",
       description: "Perfect for schools beginning their digital transformation journey",
       features: [
-        "Professional 5-page responsive website",
-        "Home, About, Academics, Gallery, Contact",
-        "Mobile-friendly design",
-        "Contact form with email notifications",
-        "Google Maps integration",
-        "Basic SEO optimization",
-        "Dedicated support for 1 month",
-        "Professional hosting guidance",
+        { name: "Professional 5-page responsive website", price: 8000 },
+        { name: "Custom design & branding", price: 3500 },
+        { name: "Contact form with email notifications", price: 2000 },
+        { name: "Google Maps integration", price: 1000 },
+        { name: "Image gallery (up to 50 photos)", price: 1500 },
+        { name: "SEO optimization (on-page)", price: 2000 },
+        { name: "Social media integration", price: 999 },
+      ],
+      includedFree: [
+        "1 month dedicated support",
+        "SSL certificate & security",
+        "Mobile optimization",
       ],
       popular: false,
       color: "from-gray-500 to-gray-600",
@@ -52,20 +58,24 @@ export default function Pricing() {
     },
     {
       name: "Standard",
-      price: "₹13,999",
+      price: "₹33,999",
       duration: "one-time",
       description: "Comprehensive solution for schools seeking advanced features and functionality",
       features: [
-        "Professional 10-page responsive website",
-        "All Basic features included",
-        "Event calendar & announcements",
-        "Photo & video gallery",
-        "Downloads section (PDFs, forms)",
-        "Admission inquiry form",
-        "Staff & faculty pages",
-        "Social media integration",
-        "Premium SEO optimization",
+        { name: "Professional 10-page responsive website", price: 12000 },
+        { name: "Premium custom design & UI/UX", price: 5000 },
+        { name: "Event calendar & announcements system", price: 3500 },
+        { name: "Photo & video gallery", price: 2500 },
+        { name: "Downloads section (PDFs, forms)", price: 2000 },
+        { name: "Staff & faculty pages with profiles", price: 3500 },
+        { name: "Social media feed integration", price: 1500 },
+        { name: "Advanced SEO & Google Analytics", price: 3000 },
+        { name: "Newsletter signup integration", price: 999 },
+      ],
+      includedFree: [
         "3 months dedicated support",
+        "Content management training",
+        "Backup & security setup",
       ],
       popular: true,
       color: "from-primary-500 to-primary-600",
@@ -73,22 +83,27 @@ export default function Pricing() {
     },
     {
       name: "Premium",
-      price: "₹21,999",
+      price: "₹64,999",
       duration: "one-time",
       description: "Enterprise-grade solution for schools wanting a complete digital ecosystem",
       features: [
-        "Unlimited pages",
-        "All Standard features included",
-        "Student/Parent login portal",
-        "Online fee payment integration",
-        "Attendance tracking system",
-        "Assignment upload/download",
-        "Notice board with notifications",
-        "Multi-language support (Hindi/English)",
-        "Blog/News section",
-        "Admin dashboard",
-        "Professional email/SMS notification setup",
-        "6 months dedicated support & maintenance",
+        { name: "Unlimited pages with custom architecture", price: 15000 },
+        { name: "Student/Parent login portal", price: 12000 },
+        { name: "Admin dashboard with analytics", price: 5000 },
+        { name: "Online fee payment integration (Razorpay/Paytm)", price: 8000 },
+        { name: "Attendance tracking system", price: 6000 },
+        { name: "Assignment upload/download module", price: 5000 },
+        { name: "Notice board with push notifications", price: 4000 },
+        { name: "Multi-language support (Hindi/English)", price: 3500 },
+        { name: "Blog/News section with CMS", price: 3000 },
+        { name: "Email/SMS notification system", price: 2500 },
+        { name: "Live chat support widget", price: 999 },
+      ],
+      includedFree: [
+        "6 months dedicated support",
+        "Priority bug fixes",
+        "Monthly performance reports",
+        "Staff training sessions",
       ],
       popular: false,
       color: "from-purple-500 to-purple-600",
@@ -118,6 +133,10 @@ export default function Pricing() {
     },
   };
 
+  const calculateSubtotal = (features:any) => {
+    return features.reduce((sum:any, feature:any) => sum + feature.price, 0);
+  };
+
   return (
     <section id="pricing" ref={ref} className="py-20 bg-gradient-to-br from-gray-50 to-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -128,13 +147,13 @@ export default function Pricing() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Affordable Pricing for Schools
+            Transparent Pricing for Schools
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Special rates for educational institutions across India. Quality websites that fit your budget.
+            Clear, itemized pricing with no hidden costs. See exactly what you&apos;re paying for.
           </p>
           <div className="mt-6 inline-block bg-primary-100 text-primary-800 px-6 py-3 rounded-full">
-            <p className="text-sm font-semibold">🎓 Special introductory pricing - Partner with us as we grow together!</p>
+            <p className="text-sm font-semibold">🎓 Special rates for educational institutions - Invest in your digital future!</p>
           </div>
         </motion.div>
 
@@ -153,170 +172,91 @@ export default function Pricing() {
               Try Our Landing Page Package
             </h3>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Perfect for new schools and startups who want to establish a professional online presence with room to grow
+              Perfect for new schools and startups who want to establish a professional online presence
             </p>
           </div>
 
-          <motion.div
-            whileHover={{ scale: 1.01, y: -5 }}
-            className="relative bg-white rounded-2xl shadow-xl overflow-hidden border-2 border-green-500"
-          >
-            <div className="grid md:grid-cols-3 gap-0">
-              {/* Header */}
-              <div className={`bg-gradient-to-br ${starterPlan.color} p-8 text-white flex flex-col justify-center`}>
-                <h3 className="text-3xl font-bold mb-2">{starterPlan.name}</h3>
-                <div className="mb-4">
-                  <span className="text-5xl font-bold">{starterPlan.price}</span>
-                  <span className="text-lg opacity-90">/{starterPlan.duration}</span>
+          <div className="max-w-4xl mx-auto">
+            <motion.div
+              whileHover={{ scale: 1.02, y: -5 }}
+              className="relative bg-white rounded-2xl shadow-xl overflow-hidden border-2 border-green-500"
+            >
+              {/* Header Section */}
+              <div className={`bg-gradient-to-br ${starterPlan.color} p-6 text-white`}>
+                <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                  <div className="flex-1">
+                    <h3 className="text-2xl font-bold mb-2">{starterPlan.name}</h3>
+                    <p className="text-sm opacity-90">
+                      {starterPlan.description}
+                    </p>
+                  </div>
+                  <div className="bg-white/20 rounded-lg p-4 backdrop-blur-sm md:min-w-[200px]">
+                    <div className="text-xs opacity-90 mb-1">Package Total</div>
+                    <div className="mb-1">
+                      <span className="text-3xl font-bold">{starterPlan.price}</span>
+                      <span className="text-sm opacity-90">/{starterPlan.duration}</span>
+                    </div>
+                    <div className="text-xs opacity-75">
+                      Value: ₹{calculateSubtotal(starterPlan.features).toLocaleString()}
+                    </div>
+                  </div>
                 </div>
-                <p className="text-sm opacity-90">
-                  {starterPlan.description}
-                </p>
               </div>
 
-              {/* Features */}
-              <div className="p-8 md:col-span-2">
-                <ul className="grid md:grid-cols-2 gap-x-6 gap-y-3 mb-6">
-                  {starterPlan.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-start space-x-3">
-                      <FaCheck className="text-green-500 mt-1 flex-shrink-0" />
-                      <span className="text-gray-700 text-sm">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
+              {/* Features Section */}
+              <div className="p-6">
+                <div className="grid md:grid-cols-2 gap-6">
+                  {/* Features List */}
+                  <div>
+                    <h4 className="font-semibold text-gray-900 mb-3 text-sm">What&apos;s Included:</h4>
+                    <ul className="space-y-2">
+                      {starterPlan.features.map((feature, idx) => (
+                        <li key={idx} className="flex items-start justify-between text-xs border-b border-gray-100 pb-2">
+                          <div className="flex items-start space-x-2 flex-1">
+                            <FaCheck className="text-green-500 mt-0.5 flex-shrink-0 text-xs" />
+                            <span className="text-gray-700">{feature.name}</span>
+                          </div>
+                          <span className="text-gray-600 font-semibold ml-2 whitespace-nowrap">₹{feature.price.toLocaleString()}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
 
-                <Link
-                  href="/contact"
-                  className={`block w-full md:w-auto md:inline-block ${starterPlan.buttonColor} text-center text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl`}
-                >
-                  Start Small, Grow Big →
-                </Link>
-              </div>
-            </div>
-          </motion.div>
-        </motion.div>
+                  {/* Bonus & CTA */}
+                  <div className="flex flex-col justify-between">
+                    <div className="bg-green-50 rounded-lg p-4 mb-4">
+                      <h5 className="font-semibold text-green-800 mb-2 text-sm">✨ Bonus Inclusions:</h5>
+                      <ul className="space-y-1">
+                        {starterPlan.includedFree.map((item, idx) => (
+                          <li key={idx} className="text-green-700 text-xs flex items-start">
+                            <span className="mr-2 mt-0.5">•</span>
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
 
-        {/* Upgrade Path Visualization */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.6, delay: 0.5 }}
-          className="mb-12"
-        >
-          <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold text-gray-900 mb-2">
-              What Changes When You Upgrade?
-            </h3>
-            <p className="text-gray-600 text-sm">
-              See exactly what additional value each tier brings to your school
-            </p>
-          </div>
-          <div className="grid md:grid-cols-3 gap-6">
-            <motion.div 
-              whileHover={{ y: -5, scale: 1.02 }}
-              transition={{ duration: 0.3 }}
-              className="relative p-6 rounded-xl bg-gradient-to-br from-white to-gray-50 shadow-md hover:shadow-xl border border-gray-200 overflow-hidden group"
-            >
-              <div className="absolute top-0 right-0 w-32 h-32 bg-green-500 opacity-5 rounded-full -mr-16 -mt-16 group-hover:opacity-10 transition-opacity"></div>
-              <div className="flex items-center justify-between mb-4 pb-4 border-b border-gray-200">
-                <h4 className="font-bold text-gray-900 flex items-center">
-                  <span className="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
-                  Starter → Basic
-                </h4>
-                <span className="text-green-600 text-sm font-bold bg-green-50 px-3 py-1 rounded-full">+₹3,000</span>
+                    <div className="bg-gray-50 rounded-lg p-3 mb-4">
+                      <div className="flex justify-between items-center text-xs mb-2">
+                        <span className="text-gray-600">Subtotal:</span>
+                        <span className="font-semibold text-gray-900">₹{calculateSubtotal(starterPlan.features).toLocaleString()}</span>
+                      </div>
+                      <div className="flex justify-between items-center text-sm pt-2 border-t border-gray-200">
+                        <span className="font-bold text-gray-900">Package Price:</span>
+                        <span className="font-bold text-green-600">{starterPlan.price}</span>
+                      </div>
+                     
+                    </div>
+
+                    <Link
+                      href="/contact"
+                      className={`block w-full ${starterPlan.buttonColor} text-center text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl text-sm`}
+                    >
+                      Start Small, Grow Big →
+                    </Link>
+                  </div>
+                </div>
               </div>
-              <ul className="space-y-3 text-sm text-gray-700">
-                <li className="flex items-start group/item">
-                  <span className="text-green-500 mr-3 mt-0.5">✦</span>
-                  <span className="group-hover/item:translate-x-1 transition-transform">1 page → 5 full pages</span>
-                </li>
-                <li className="flex items-start group/item">
-                  <span className="text-green-500 mr-3 mt-0.5">✦</span>
-                  <span className="group-hover/item:translate-x-1 transition-transform">Email notifications</span>
-                </li>
-                <li className="flex items-start group/item">
-                  <span className="text-green-500 mr-3 mt-0.5">✦</span>
-                  <span className="group-hover/item:translate-x-1 transition-transform">SEO optimization</span>
-                </li>
-                <li className="flex items-start group/item">
-                  <span className="text-green-500 mr-3 mt-0.5">✦</span>
-                  <span className="group-hover/item:translate-x-1 transition-transform">Extended support</span>
-                </li>
-              </ul>
-            </motion.div>
-            
-            <motion.div 
-              whileHover={{ y: -5, scale: 1.02 }}
-              transition={{ duration: 0.3 }}
-              className="relative p-6 rounded-xl bg-gradient-to-br from-white to-blue-50 shadow-md hover:shadow-xl border border-blue-200 overflow-hidden group"
-            >
-              <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500 opacity-5 rounded-full -mr-16 -mt-16 group-hover:opacity-10 transition-opacity"></div>
-              <div className="flex items-center justify-between mb-4 pb-4 border-b border-blue-200">
-                <h4 className="font-bold text-gray-900 flex items-center">
-                  <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
-                  Basic → Standard
-                </h4>
-                <span className="text-blue-600 text-sm font-bold bg-blue-50 px-3 py-1 rounded-full">+₹7,000</span>
-              </div>
-              <ul className="space-y-3 text-sm text-gray-700">
-                <li className="flex items-start group/item">
-                  <span className="text-blue-500 mr-3 mt-0.5">✦</span>
-                  <span className="group-hover/item:translate-x-1 transition-transform">10 pages instead of 5</span>
-                </li>
-                <li className="flex items-start group/item">
-                  <span className="text-blue-500 mr-3 mt-0.5">✦</span>
-                  <span className="group-hover/item:translate-x-1 transition-transform">Events & announcements</span>
-                </li>
-                <li className="flex items-start group/item">
-                  <span className="text-blue-500 mr-3 mt-0.5">✦</span>
-                  <span className="group-hover/item:translate-x-1 transition-transform">Media galleries</span>
-                </li>
-                <li className="flex items-start group/item">
-                  <span className="text-blue-500 mr-3 mt-0.5">✦</span>
-                  <span className="group-hover/item:translate-x-1 transition-transform">Downloads & forms</span>
-                </li>
-                <li className="flex items-start group/item">
-                  <span className="text-blue-500 mr-3 mt-0.5">✦</span>
-                  <span className="group-hover/item:translate-x-1 transition-transform">Staff pages & socials</span>
-                </li>
-              </ul>
-            </motion.div>
-            
-            <motion.div 
-              whileHover={{ y: -5, scale: 1.02 }}
-              transition={{ duration: 0.3 }}
-              className="relative p-6 rounded-xl bg-gradient-to-br from-white to-purple-50 shadow-md hover:shadow-xl border border-purple-200 overflow-hidden group"
-            >
-              <div className="absolute top-0 right-0 w-32 h-32 bg-purple-500 opacity-5 rounded-full -mr-16 -mt-16 group-hover:opacity-10 transition-opacity"></div>
-              <div className="flex items-center justify-between mb-4 pb-4 border-b border-purple-200">
-                <h4 className="font-bold text-gray-900 flex items-center">
-                  <span className="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>
-                  Standard → Premium
-                </h4>
-                <span className="text-purple-600 text-sm font-bold bg-purple-50 px-3 py-1 rounded-full">+₹8,000</span>
-              </div>
-              <ul className="space-y-3 text-sm text-gray-700">
-                <li className="flex items-start group/item">
-                  <span className="text-purple-500 mr-3 mt-0.5">✦</span>
-                  <span className="group-hover/item:translate-x-1 transition-transform">Login portal system</span>
-                </li>
-                <li className="flex items-start group/item">
-                  <span className="text-purple-500 mr-3 mt-0.5">✦</span>
-                  <span className="group-hover/item:translate-x-1 transition-transform">Online fee payments</span>
-                </li>
-                <li className="flex items-start group/item">
-                  <span className="text-purple-500 mr-3 mt-0.5">✦</span>
-                  <span className="group-hover/item:translate-x-1 transition-transform">Attendance tracking</span>
-                </li>
-                <li className="flex items-start group/item">
-                  <span className="text-purple-500 mr-3 mt-0.5">✦</span>
-                  <span className="group-hover/item:translate-x-1 transition-transform">Multi-language support</span>
-                </li>
-                <li className="flex items-start group/item">
-                  <span className="text-purple-500 mr-3 mt-0.5">✦</span>
-                  <span className="group-hover/item:translate-x-1 transition-transform">Admin dashboard</span>
-                </li>
-              </ul>
             </motion.div>
           </div>
         </motion.div>
@@ -341,44 +281,68 @@ export default function Pricing() {
             <motion.div
               key={index}
               variants={cardVariants}
-              whileHover={{ scale: 1.05, y: -10 }}
+              whileHover={{ scale: 1.03, y: -10 }}
               className={`relative bg-white rounded-2xl shadow-xl overflow-hidden ${
                 tier.popular ? 'ring-4 ring-primary-500' : ''
               }`}
             >
               {tier.popular && (
-                <div className="absolute top-0 right-0 bg-primary-500 text-white px-4 py-1 text-sm font-semibold flex items-center space-x-1">
+                <div className="absolute top-0 right-0 bg-primary-500 text-white px-4 py-1 text-sm font-semibold flex items-center space-x-1 z-10">
                   <FaStar className="text-yellow-300" />
                   <span>Most Popular</span>
                 </div>
               )}
 
               {/* Header */}
-              <div className={`bg-gradient-to-r ${tier.color} p-8 text-white`}>
+              <div className={`bg-gradient-to-r ${tier.color} p-6 text-white`}>
                 <h3 className="text-2xl font-bold mb-2">{tier.name}</h3>
-                <div className="mb-4">
-                  <span className="text-5xl font-bold">{tier.price}</span>
-                  <span className="text-lg opacity-90">/{tier.duration}</span>
-                </div>
-                <p className={`text-sm ${tier.popular ? 'text-white' : 'opacity-90'}`}>
+                <p className={`text-sm mb-4 ${tier.popular ? 'text-white' : 'opacity-90'}`}>
                   {tier.description}
                 </p>
+                <div className="bg-white/20 rounded-lg p-3 backdrop-blur-sm">
+                  <div className="text-xs opacity-90 mb-1">Package Total</div>
+                  <div>
+                    <span className="text-3xl font-bold">{tier.price}</span>
+                    <span className="text-sm opacity-90">/{tier.duration}</span>
+                  </div>
+                  <div className="text-xs opacity-75 mt-1">
+                    Value: ₹{calculateSubtotal(tier.features).toLocaleString()}
+                  </div>
+                </div>
               </div>
 
               {/* Features */}
-              <div className="p-8">
-                <ul className="space-y-4 mb-8">
+              <div className="p-6">
+                <h4 className="font-semibold text-gray-900 mb-3 text-sm">Feature Breakdown:</h4>
+                <ul className="space-y-2 mb-4 max-h-96 overflow-y-auto">
                   {tier.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-start space-x-3">
-                      <FaCheck className="text-green-500 mt-1 flex-shrink-0" />
-                      <span className="text-gray-700">{feature}</span>
+                    <li key={idx} className="flex items-start justify-between text-xs border-b border-gray-50 pb-2">
+                      <div className="flex items-start space-x-2 flex-1">
+                        <FaCheck className="text-green-500 mt-0.5 flex-shrink-0 text-xs" />
+                        <span className="text-gray-700">{feature.name}</span>
+                      </div>
+                      <span className="text-gray-600 font-semibold ml-2 whitespace-nowrap">₹{feature.price.toLocaleString()}</span>
                     </li>
                   ))}
                 </ul>
 
+                <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg p-3 mb-4">
+                  <h5 className="font-semibold text-blue-800 mb-2 text-xs">✨ Bonus Inclusions (Free):</h5>
+                  <ul className="space-y-1">
+                    {tier.includedFree.map((item, idx) => (
+                      <li key={idx} className="text-blue-700 text-xs flex items-center">
+                        <span className="mr-2">•</span>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+              
+
                 <Link
                   href="/contact"
-                  className={`block w-full ${tier.buttonColor} text-center text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl`}
+                  className={`block w-full ${tier.buttonColor} text-center text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl text-sm`}
                 >
                   Get Started
                 </Link>
@@ -395,27 +359,45 @@ export default function Pricing() {
           className="mt-16 text-center"
         >
           <div className="bg-white rounded-2xl shadow-lg p-8 max-w-4xl mx-auto">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">What&apos;s Included in All Plans</h3>
-            <div className="grid md:grid-cols-3 gap-6 text-left">
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">Why Our Transparent Pricing?</h3>
+            <div className="grid md:grid-cols-3 gap-6 text-left mb-6">
               <div>
-                <h4 className="font-semibold text-primary-600 mb-2">✓ Clean Design</h4>
-                <p className="text-sm text-gray-600">Modern, professional look that represents your school well</p>
+                <h4 className="font-semibold text-primary-600 mb-2">✓ No Hidden Costs</h4>
+                <p className="text-sm text-gray-600">See exactly what each feature costs - complete transparency</p>
               </div>
               <div>
-                <h4 className="font-semibold text-primary-600 mb-2">✓ Fast Loading</h4>
-                <p className="text-sm text-gray-600">Optimized for quick loading even on slow connections</p>
+                <h4 className="font-semibold text-primary-600 mb-2">✓ Fair Pricing</h4>
+                <p className="text-sm text-gray-600">Package discounts mean you save more when you choose comprehensive plans</p>
               </div>
               <div>
-                <h4 className="font-semibold text-primary-600 mb-2">✓ Easy Updates</h4>
-                <p className="text-sm text-gray-600">Simple content management you can handle yourself</p>
+                <h4 className="font-semibold text-primary-600 mb-2">✓ Flexible Options</h4>
+                <p className="text-sm text-gray-600">Add or remove features based on your specific needs</p>
               </div>
             </div>
             <div className="mt-8 pt-6 border-t border-gray-200">
               <p className="text-gray-600">
-                💡 <strong>Need something unique?</strong> We offer custom solutions including student portals, 
-                online examination systems, and library management. Let&apos;s build the perfect solution for your institution!
+                💡 <strong>Need a custom solution?</strong> We offer tailored packages for unique requirements including 
+                ERP systems, learning management systems, and custom integrations. Contact us for a personalized quote!
               </p>
             </div>
+          </div>
+        </motion.div>
+
+        {/* Payment Terms */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+          transition={{ duration: 0.6, delay: 0.8 }}
+          className="mt-12 text-center"
+        >
+          <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-6 max-w-3xl mx-auto">
+            <h4 className="font-bold text-gray-900 mb-3">💳 Flexible Payment Options</h4>
+            <p className="text-sm text-gray-600 mb-2">
+              We understand budget constraints. Enjoy 50% payment upfront, 50% on delivery.
+            </p>
+            <p className="text-xs text-gray-500">
+              All prices are one-time development costs. Optional: Annual maintenance available at 15% of package price.
+            </p>
           </div>
         </motion.div>
       </div>
