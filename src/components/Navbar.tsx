@@ -9,6 +9,7 @@ import { useRouter } from 'next/navigation';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  
   const router = useRouter();
   const navLinks = [
     { href: '/', label: 'Home' },
