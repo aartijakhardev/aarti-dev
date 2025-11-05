@@ -1,6 +1,6 @@
 import Hero from "@/components/Hero";
 import Experience from "@/components/Experience";
-import Pricing from "@/components/Pricing";
+import Services from "@/components/Services";
 import CTA from "@/components/CTA";
 
 export default function Home() {
@@ -8,7 +8,7 @@ export default function Home() {
     <>
       <Hero />
       <Experience />
-      <Pricing />
+      <Services />
       <CTA />
     </>
   );

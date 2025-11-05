@@ -5,9 +5,9 @@ import Link from 'next/link';
 import { FaCode, FaRocket, FaLaptopCode } from 'react-icons/fa';
 
 export default function Hero() {
-  const handlePricingClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+  const handleServicesClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
-    const element = document.querySelector('#pricing');
+    const element = document.querySelector('#services');
     if (element) {
       element.scrollIntoView({
         behavior: 'smooth',
@@ -121,11 +121,11 @@ export default function Hero() {
               Start Your Project
             </Link>
             <a
-              href="#pricing"
-              onClick={handlePricingClick}
+              href="#services"
+              onClick={handleServicesClick}
               className="bg-white text-primary-600 px-8 py-4 rounded-full text-lg font-semibold hover:bg-gray-50 transition-all duration-300 shadow-lg hover:shadow-xl border-2 border-primary-600 cursor-pointer"
             >
-              View Pricing
+              View Services
             </a>
           </motion.div>
 
