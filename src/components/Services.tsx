@@ -80,7 +80,7 @@ export default function Services() {
       category: "Educational Platform",
       description: "Comprehensive school management platform with 20+ pages covering complete academic administration, multi-role dashboards, and real-time analytics.",
       image: "/edu-vue-demo.png",
-      demoUrl: "#",
+      demoUrl: "https://edu-vue-demo.vercel.app/",
       githubUrl: "#",
       technologies: ["React 18", "TypeScript", "Tailwind CSS", "Vite", "Recharts"],
       coreFeatures: {
