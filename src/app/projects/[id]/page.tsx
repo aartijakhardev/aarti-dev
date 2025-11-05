@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { useParams } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
 import { 
   FaCheck, 
   FaArrowLeft,
@@ -304,7 +305,7 @@ export default function ProjectDetail() {
       <div className="min-h-screen flex items-center justify-center bg-gray-50">
         <div className="text-center">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">Project Not Found</h1>
-          <p className="text-gray-600 mb-8">The project you're looking for doesn't exist.</p>
+          <p className="text-gray-600 mb-8">The project you&apos;re looking for doesn&apos;t exist.</p>
           <Link
             href="/"
             className="bg-primary-600 hover:bg-primary-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300"
@@ -382,9 +383,11 @@ export default function ProjectDetail() {
               className="order-1 lg:order-2"
             >
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                <img
+                <Image
                   src={project.image}
                   alt={project.title}
+                  width={600}
+                  height={400}
                   className="w-full h-auto object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>

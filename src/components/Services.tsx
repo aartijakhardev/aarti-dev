@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { 
   FaCheck, 
   FaCode, 
@@ -545,9 +546,11 @@ export default function Services() {
                 className="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300"
               >
                 <div className="relative overflow-hidden">
-                  <img
+                  <Image
                     src={project.image}
                     alt={project.title}
+                    width={400}
+                    height={192}
                     className="w-full h-48 object-cover transition-transform duration-300 hover:scale-110"
                   />
                   <div className="absolute top-4 right-4 bg-black/70 text-white px-3 py-1 rounded-full text-xs">
