@@ -7,4 +7,3 @@ Host: https://serviwo.com
 
 # Sitemaps
 Sitemap: https://serviwo.com/sitemap.xml
-
