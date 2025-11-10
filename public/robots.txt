@@ -1,0 +1,10 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://serviwo.com
+
+# Sitemaps
+Sitemap: https://serviwo.com/sitemap.xml
+
