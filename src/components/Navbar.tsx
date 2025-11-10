@@ -17,6 +17,7 @@ export default function Navbar() {
     { href: '#services', label: 'Services' },
     { href: '/contact', label: 'Contact' },
   ];
+  
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     // Check if it's a hash link (anchor link)
